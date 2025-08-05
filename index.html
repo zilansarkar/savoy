@@ -4,115 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Savoy IceCream</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="font-roboto bg-gray-100">
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <h2 class="logo">Savoy IceCream</h2>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#flavors">Flavors</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <nav class="bg-pink-600 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h2 class="text-2xl font-pacifico">Savoy IceCream</h2>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-links" class="hidden md:flex space-x-6">
+                <li><a href="#" class="hover:text-pink-200 transition">Home</a></li>
+                <li><a href="#flavors" class="hover:text-pink-200 transition">Flavors</a></li>
+                <li><a href="#about" class="hover:text-pink-200 transition">About</a></li>
+                <li><a href="#contact" class="hover:text-pink-200 transition">Contact</a></li>
             </ul>
         </div>
+        <ul id="mobile-menu" class="hidden bg-pink-700 text-white flex-col space-y-2 px-4 py-2 md:hidden">
+            <li><a href="#" class="block hover:text-pink-200 transition">Home</a></li>
+            <li><a href="#flavors" class="block hover:text-pink-200 transition">Flavors</a></li>
+            <li><a href="#about" class="block hover:text-pink-200 transition">About</a></li>
+            <li><a href="#contact" class="block hover:text-pink-200 transition">Contact</a></li>
+        </ul>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Savoy IceCream</h1> 
-            <a href="#flavors" class="btn">Explore Flavors</a>
+    <header class="hero relative bg-cover bg-center h-[600px]" style="background-image: url('https://images.unsplash.com/photo-1497034825429-c343d7c6a68f');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 h-full flex items-center justify-center text-center text-white">
+            <div>
+                <h1 class="text-5xl md:text-6xl font-pacifico">Savoy IceCream</h1>
+                <p class="typewriter text-2xl md:text-3xl mt-4"></p>
+                <a href="#flavors" class="mt-6 inline-block bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-pink-700 transition">Explore Flavors</a>
+            </div>
         </div>
     </header>
 
     <!-- Flavors Section -->
-    <section class="flavors" id="flavors">
-        <div class="container">
-            <h2>Our Flavors</h2>
-            <div class="flavor-grid">
-                <div class="flavor-card" style="--rotation: -5deg;">
-                    <img src="cklt.jpg" alt="Chocolate Fudge">
-                    <h3>Chocolate Fudge</h3>
+    <section class="flavors py-16" id="flavors">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-pacifico text-center text-pink-600 mb-8">Our Flavors</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flavor-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition cursor-pointer" onclick="openModal('Chocolate Fudge', 'Rich and creamy chocolate indulgence.', 'cklt.jpg')">
+                    <img src="cklt.jpg" alt="Chocolate Fudge" class="w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold text-center py-4">Chocolate Fudge</h3>
                 </div>
-                <div class="flavor-card" style="--rotation: 3deg;">
-                    <img src="strawberry.jpg" alt="Strawberry Bliss">
-                    <h3>Strawberry Bliss</h3>
+                <div class="flavor-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition cursor-pointer" onclick="openModal('Strawberry Bliss', 'Fresh strawberries in every scoop.', 'strawberry.jpg')">
+                    <img src="strawberry.jpg" alt="Strawberry Bliss" class="w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold text-center py-4">Strawberry Bliss</h3>
                 </div>
-                <div class="flavor-card" style="--rotation: -2deg;">
-                    <img src="mango.jpg" alt="Mango Tango">
-                    <h3>Mango Tango</h3>
+                <div class="flavor-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition cursor-pointer" onclick="openModal('Mango Tango', 'Tropical mango delight.', 'mango.jpg')">
+                    <img src="mango.jpg" alt="Mango Tango" class="w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold text-center py-4">Mango Tango</h3>
                 </div>
-                <div class="flavor-card" style="--rotation: 5deg;">
-                    <img src="vanila.jpg" alt="Vanilla Dream">
-                    <h3>Vanilla Dream</h3>
+                <div class="flavor-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition cursor-pointer" onclick="openModal('Vanilla Dream', 'Classic creamy vanilla.', 'vanila.jpg')">
+                    <img src="vanila.jpg" alt="Vanilla Dream" class="w-full h-48 object-cover">
+                    <h3 class="text-xl font-bold text-center py-4">Vanilla Dream</h3>
                 </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div id="flavor-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-lg p-6 max-w-md w-full">
+                <h3 id="modal-title" class="text-2xl font-bold mb-4"></h3>
+                <img id="modal-image" src="" alt="" class="w-full h-48 object-cover mb-4">
+                <p id="modal-description" class="text-gray-700 mb-4"></p>
+                <button onclick="closeModal()" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Close</button>
             </div>
         </div>
     </section>
 
-    
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Savoy IceCream brings you the creamiest, most delicious ice creams made from the finest ingredients. Since day one, we've been spreading joy with every scoop.</p>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p>"Absolutely love the Mango Tango! It's my go-to flavor!"</p>
-                    <span>- Ayesha K.</span>
+    <section class="about py-16 bg-gray-200" id="about">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-pacifico text-center text-pink-600 mb-8">About Us</h2>
+            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-8">Savoy IceCream brings you the creamiest, most delicious ice creams made from the finest ingredients. Since day one, we've been spreading joy with every scoop.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="team-member bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold">Ayesha Khan</h3>
+                    <p class="text-gray-600">Founder & Ice Cream Artisan</p>
                 </div>
-                <div class="testimonial">
-                    <p>"Savoy IceCream made our summer unforgettable."</p>
-                    <span>- Rahim U.</span>
+                <div class="team-member bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold">Rahim Uddin</h3>
+                    <p class="text-gray-600">Head of Operations</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer class="footer" id="contact">
-        <div class="wave"></div>
-        <div class="container">
-            <h3>Visit Us Today!</h3>
-            <p>123 IceCream Street, Dhaka, Bangladesh</p>
-            <p>Email: contact@savoyicecream.com | Phone: +880 1234 567890</p>
-            <p>&copy; 2025 Savoy IceCream. All rights reserved.</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-pacifico text-center text-pink-600 mb-8">What Our Customers Say</h2>
+            <div id="testimonial-carousel" class="relative">
+                <div class="testimonial flex justify-center items-center">
+                    <div class="bg-white rounded-lg shadow-lg p-6 max-w-md text-center">
+                        <p class="text-gray-700">"Absolutely love the Mango Tango! It's my go-to flavor!"</p>
+                        <span class="block mt-4 font-bold">- Ayesha K.</span>
+                    </div>
+                </div>
+                <div class="testimonial hidden justify-center items-center">
+                    <div class="bg-white rounded-lg shadow-lg p-6 max-w-md text-center">
+                        <p class="text-gray-700">"Savoy IceCream made our summer unforgettable."</p>
+                        <span class="block mt-4 font-bold">- Rahim U.</span>
+                    </div>
+                </div>
+                <button id="prev-btn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-pink-600 text-white p-2 rounded-full">←</button>
+                <button id="next-btn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-pink-600 text-white p-2 rounded-full">→</button>
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact py-16 bg-pink-600 text-white" id="contact">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-pacifico text-center mb-8">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Visit Us</h3>
+                    <p>123 IceCream Street, Dhaka, Bangladesh</p>
+                    <p>Email: contact@savoyicecream.com</p>
+                    <p>Phone: +880 1234 567890</p>
+                </div>
+                <div>
+                    <div id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium">Name</label>
+                            <input type="text" id="name" class="w-full p-2 rounded border border-gray-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium">Email</label>
+                            <input type="email" id="email" class="w-full p-2 rounded border border-gray-300">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium">Message</label>
+                            <textarea id="message" rows="4" class="w-full p-2 rounded border border-gray-300"></textarea>
+                        </div>
+                        <button onclick="submitForm()" class="bg-white text-pink-600 px-4 py-2 rounded hover:bg-gray-100">Send Message</button>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-8">&copy; 2025 Savoy IceCream. All rights reserved.</p>
+        </div>
+    </section>
 
     <script>
-        // Typewriter effect for hero section
+        // Hamburger Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Typewriter Effect
         const text = "Delight in Every Scoop!";
         let index = 0;
         const speed = 100;
-
         function typeWriter() {
             if (index < text.length) {
                 document.querySelector(".typewriter").textContent = text.slice(0, index + 1);
                 index++;
                 setTimeout(typeWriter, speed);
             } else {
-                document.querySelector(".typewriter").style.borderRight = "none";
+                setTimeout(() => {
+                    index = 0;
+                    document.querySelector(".typewriter").textContent = "";
+                    typeWriter();
+                }, 2000);
             }
         }
+        window.onload = typeWriter;
 
-        window.onload = function() {
-            document.querySelector(".typewriter").textContent = "";
-            typeWriter();
-        };
+        // Modal Functions
+        function openModal(title, description, image) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-description').textContent = description;
+            document.getElementById('modal-image').src = image;
+            document.getElementById('flavor-modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('flavor-modal').classList.add('hidden');
+        }
+
+        // Testimonial Carousel
+        const testimonials = document.querySelectorAll('.testimonial');
+        let currentTestimonial = 0;
+        document.getElementById('next-btn').addEventListener('click', () => {
+            testimonials[currentTestimonial].classList.add('hidden');
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            testimonials[currentTestimonial].classList.remove('hidden');
+        });
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            testimonials[currentTestimonial].classList.add('hidden');
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            testimonials[currentTestimonial].classList.remove('hidden');
+        });
+
+        // Form Submission
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            if (name && email && message) {
+                alert('Message sent successfully!');
+                document.getElementById('contact-form').reset();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        }
     </script>
 </body>
-
 </html>
-
