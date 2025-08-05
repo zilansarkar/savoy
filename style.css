@@ -28,7 +28,7 @@ h1, h2, h3 {
     background: linear-gradient(135deg, rgba(255, 102, 153, 0.9), rgba(255, 204, 102, 0.9));
     backdrop-filter: blur(15px);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 15px 0;
+    padding: 5px 0;
     animation: slideIn 1s ease-out;
 }
 
@@ -444,3 +444,4 @@ h1, h2, h3 {
         font-size: 1.5rem;
     }
 }
+
