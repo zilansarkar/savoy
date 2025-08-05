@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* Typewriter Effect */
 .typewriter {
     display: inline-block;
@@ -90,6 +97,8 @@
 @media (max-width: 768px) {
     .hero {
         height: 400px;
+        background-size: auto;
+        background-position: center top;
     }
 
     .hero h1 {
@@ -102,6 +111,11 @@
 }
 
 @media (max-width: 640px) {
+    .hero {
+        height: 350px;
+        background-size: contain;
+    }
+
     .flavor-card img {
         height: 160px;
     }
@@ -109,5 +123,11 @@
     .team-member img {
         width: 100px;
         height: 100px;
+    }
+}
+
+@media (min-resolution: 2dppx) {
+    .hero {
+        background-image: url('https://images.unsplash.com/photo-1567206563064-6e127db5d2e9?fit=crop&w=1920&q=80');
     }
 }
