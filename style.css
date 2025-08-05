@@ -1,4 +1,4 @@
-/* Reset & Base */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ h1, h2, h3 {
     color: #ff4d6d;
 }
 
-/* Navbar */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -80,9 +80,8 @@ h1, h2, h3 {
     color: #fff;
 }
 
-/* Hero Section */
 .hero {
-    background: url('ice.jpg') center 20% / cover no-repeat fixed; /* Shift image down by 20% */
+    background: url('savoy.jpg') center 20% / cover no-repeat fixed; /* Shift image down by 20% */
     height: 100vh;
     color: #ffffff;
     display: flex;
@@ -152,14 +151,14 @@ h1, h2, h3 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Container */
+
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 50px 20px;
 }
 
-/* About Section */
+
 .about {
     background-color: #f3c6cf;
     text-align: center;
@@ -192,7 +191,7 @@ h1, h2, h3 {
     margin: 20px auto;
 }
 
-/* Flavors Section */
+
 .flavors {
     background: linear-gradient(to bottom, #f9f9f9, #fff5f7);
     text-align: center;
@@ -232,7 +231,7 @@ h1, h2, h3 {
     color: #4a4a4a;
 }
 
-/* Testimonials Section */
+
 .testimonials {
     background: linear-gradient(to bottom, #fdf0f3, #e6f3fa);
     text-align: center;
@@ -283,7 +282,7 @@ h1, h2, h3 {
     color: #ff4d6d;
 }
 
-/* Footer */
+
 .footer {
     background: linear-gradient(90deg, #4a4a4a, #2f2f2f);
     color: #ffffff;
@@ -317,7 +316,7 @@ h1, h2, h3 {
     z-index: 1;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.5rem;
@@ -344,6 +343,7 @@ h1, h2, h3 {
     }
 
 }
+
 
 
 
