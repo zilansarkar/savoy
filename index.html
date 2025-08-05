@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savoy IceCream</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="logo">Savoy IceCream</h2>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#flavors">Flavors</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Savoy IceCream</h1>
+            <p class="typewriter">Delight in Every Scoop!</p>
+            <a href="#flavors" class="btn">Explore Flavors</a>
+        </div>
+    </header>
+
+    <!-- Flavors Section -->
+    <section class="flavors" id="flavors">
+        <div class="container">
+            <h2>Our Flavors</h2>
+            <div class="flavor-grid">
+                <div class="flavor-card" style="--rotation: -5deg;">
+                    <img src="cklt.jpg" alt="Chocolate Fudge">
+                    <h3>Chocolate Fudge</h3>
+                </div>
+                <div class="flavor-card" style="--rotation: 3deg;">
+                    <img src="strawberry.jpg" alt="Strawberry Bliss">
+                    <h3>Strawberry Bliss</h3>
+                </div>
+                <div class="flavor-card" style="--rotation: -2deg;">
+                    <img src="mango.jpg" alt="Mango Tango">
+                    <h3>Mango Tango</h3>
+                </div>
+                <div class="flavor-card" style="--rotation: 5deg;">
+                    <img src="vanila.jpg" alt="Vanilla Dream">
+                    <h3>Vanilla Dream</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Savoy IceCream brings you the creamiest, most delicious ice creams made from the finest ingredients. Since day one, we've been spreading joy with every scoop.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Absolutely love the Mango Tango! It's my go-to flavor!"</p>
+                    <span>- Ayesha K.</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Savoy IceCream made our summer unforgettable."</p>
+                    <span>- Rahim U.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contact">
+        <div class="wave"></div>
+        <div class="container">
+            <h3>Visit Us Today!</h3>
+            <p>123 IceCream Street, Dhaka, Bangladesh</p>
+            <p>Email: contact@savoyicecream.com | Phone: +880 1234 567890</p>
+            <p>&copy; 2025 Savoy IceCream. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Typewriter effect for hero section
+        const text = "Delight in Every Scoop!";
+        let index = 0;
+        const speed = 100;
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.querySelector(".typewriter").textContent = text.slice(0, index + 1);
+                index++;
+                setTimeout(typeWriter, speed);
+            } else {
+                document.querySelector(".typewriter").style.borderRight = "none";
+            }
+        }
+
+        window.onload = function() {
+            document.querySelector(".typewriter").textContent = "";
+            typeWriter();
+        };
+    </script>
+</body>
+</html>
