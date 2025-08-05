@@ -82,7 +82,7 @@ h1, h2, h3 {
 
 /* Hero Section */
 .hero {
-    background: url('ice.jpg') center/cover no-repeat fixed;
+    background: url('ice.jpg') center 20% / cover no-repeat fixed; /* Shift image down by 20% */
     height: 100vh;
     color: #ffffff;
     display: flex;
@@ -344,5 +344,6 @@ h1, h2, h3 {
     }
 
 }
+
 
 
