@@ -82,7 +82,7 @@ h1, h2, h3 {
 
 /* Hero Section */
 .hero {
-    background: url('pi1.jpg') center/cover no-repeat fixed;
+    background: url('ice.jpg') center/cover no-repeat fixed;
     height: 100vh;
     color: #ffffff;
     display: flex;
@@ -342,4 +342,5 @@ h1, h2, h3 {
     .flavor-card:hover {
         transform: scale(1.05);
     }
+
 }
