@@ -1,447 +1,113 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #ffe6f0;
-    font-family: 'Bubblegum Sans', cursive;
-    color: #2d1b2b;
-    line-height: 1.8;
-    scroll-behavior: smooth;
-    padding-top: 90px;
-    overflow-x: hidden;
-}
-
-h1, h2, h3 {
-    font-family: 'Cookie', cursive;
-    color: #ff3366;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: linear-gradient(135deg, rgba(255, 102, 153, 0.9), rgba(255, 204, 102, 0.9));
-    backdrop-filter: blur(15px);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 5px 0;
-    animation: slideIn 1s ease-out;
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
-}
-
-.nav-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 0 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Cookie', cursive;
-    font-size: 2.8rem;
-    color: #fff;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.1);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 35px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-weight: 600;
-    font-family: 'Bubblegum Sans', cursive;
-    color: #fff;
-    position: relative;
-    padding: 8px 12px;
-    transition: all 0.3s ease;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, #ffcc66, #ff3366);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.nav-links a:hover {
-    color: #ffcc66;
-    transform: translateY(-2px);
-}
-
-.hero {
-    background: url('savoy.jpg') center / cover no-repeat fixed;
-    height: 100vh;
-    color: #fff;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: right;
-    padding: 0 8%;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255, 51, 102, 0.4), rgba(255, 204, 102, 0.4));
-    z-index: 1;
-}
-
-.hero-content {
-    max-width: 700px;
-    z-index: 2;
-    position: relative;
-    animation: fadeInRight 1.5s ease-out;
-}
-
-@keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(100px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-.hero-content h1 {
-    font-size: 5.5rem;
-    font-family: 'Cookie', cursive;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.btn {
-    padding: 15px 35px;
-    background: linear-gradient(45deg, #ff3366, #ffcc66);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-family: 'Bubblegum Sans', cursive;
-    font-size: 1.2rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.btn:hover::before {
-    left: 100%;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 80px 30px;
-}
-
-.about {
-    background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
-    text-align: center;
-    color: #2d1b2b;
-    padding: 100px 0;
-    position: relative;
-}
-
-.about h2 {
-    color: #ff3366;
-    font-size: 3.2rem;
-    position: relative;
+/* Typewriter Effect */
+.typewriter {
     display: inline-block;
+    border-right: 2px solid white;
+    animation: blink 0.75s step-end infinite;
 }
 
-.about h2::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 5px;
-    background: linear-gradient(90deg, #ff3366, #ffcc66);
-    border-radius: 5px;
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
 }
 
-.about p {
-    font-size: 1.3rem;
-    max-width: 900px;
-    margin: 30px auto;
-    font-family: 'Poppins', sans-serif;
-}
-
-.flavors {
-    background: linear-gradient(to bottom, #fff5e6, #ffe6f0);
-    text-align: center;
-    padding: 120px 0;
-    position: relative;
-}
-
-.flavors::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/food.png') repeat;
-    opacity: 0.05;
-    z-index: 0;
-}
-
-.flavor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 50px;
-    margin-top: 60px;
-    position: relative;
-    z-index: 1;
-}
-
+/* Flavor Card Hover Effect */
 .flavor-card {
-    background-color: #fff;
-    border-radius: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    position: relative;
-}
-
-.flavor-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255, 51, 102, 0.1), rgba(255, 204, 102, 0.1));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.flavor-card:hover::before {
-    opacity: 1;
+    transition: transform 0.3s ease-in-out;
 }
 
 .flavor-card:hover {
-    transform: scale(1.08) rotate(2deg);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05) rotate(var(--rotation, 0deg));
 }
 
-.flavor-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-bottom: 5px solid #ff3366;
+/* Modal Styling */
+#flavor-modal {
+    transition: opacity 0.3s ease-in-out;
 }
 
-.flavor-card h3 {
-    margin: 25px;
-    color: #2d1b2b;
-    font-size: 1.8rem;
+#flavor-modal:not(.hidden) {
+    opacity: 1;
 }
 
-.testimonials {
-    background: linear-gradient(to bottom, #ffe6f0, #e6f3ff);
-    text-align: center;
-    padding: 120px 0;
-    position: relative;
-    overflow: hidden;
+#flavor-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
-.testimonials::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/sprinkles.png') repeat;
-    opacity: 0.08;
-    z-index: 0;
+#flavor-modal > div {
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
 }
 
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-    margin-top: 60px;
-    position: relative;
-    z-index: 1;
+#flavor-modal:not(.hidden) > div {
+    transform: translateY(0);
 }
 
+/* Testimonial Carousel */
 .testimonial {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 25px;
-    font-style: italic;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    position: relative;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.testimonial::before {
-    content: '❝';
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    font-size: 3rem;
-    color: #ff3366;
-    opacity: 0.3;
+#prev-btn, #next-btn {
+    transition: background-color 0.3s ease-in-out;
 }
 
-.testimonial:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+#prev-btn:hover, #next-btn:hover {
+    background-color: #db2777;
 }
 
-.testimonial span {
-    display: block;
-    margin-top: 20px;
-    font-weight: 700;
-    color: #ff3366;
-    font-family: 'Bubblegum Sans', cursive;
+/* Contact Form Inputs */
+#contact-form input,
+#contact-form textarea {
+    transition: border-color 0.3s ease-in-out;
 }
 
-.footer {
-    background: linear-gradient(90deg, #2d1b2b, #1a1010);
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-    position: relative;
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: #db2777;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
     overflow: hidden;
 }
 
-.footer .wave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: url('https://svgwave.in/random/1') no-repeat center;
-    background-size: cover;
-    opacity: 0.2;
+#mobile-menu:not(.hidden) {
+    max-height: 200px;
 }
 
-.footer h3 {
-    margin-bottom: 20px;
-    color: #ffcc66;
-    font-size: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.footer p {
-    margin: 10px 0;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    z-index: 1;
-}
-
-@media (max-width: 1024px) {
-    .hero-content h1 {
-        font-size: 4rem;
-    }
-
-    .nav-links {
-        gap: 25px;
-    }
-
-    .logo {
-        font-size: 2.2rem;
-    }
-}
-
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 3rem;
+    .hero {
+        height: 400px;
     }
 
-    .nav-links {
-        gap: 15px;
+    .hero h1 {
+        font-size: 2.5rem;
     }
 
-    .logo {
-        font-size: 1.8rem;
-    }
-
-    .flavor-grid, .testimonial-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-
-    .btn {
-        padding: 12px 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
-    .about h2, .flavors h2, .testimonials h2 {
-        font-size: 2.2rem;
-    }
-
-    .flavor-card img {
-        height: 180px;
-    }
-
-    .flavor-card h3, .testimonial span {
+    .typewriter {
         font-size: 1.5rem;
     }
 }
 
+@media (max-width: 640px) {
+    .flavor-card img {
+        height: 160px;
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+}
